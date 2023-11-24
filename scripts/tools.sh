@@ -3,7 +3,7 @@
 source _utils.sh
 
 # ------------------------------------------------------------------------------
-e_pending "Checking tools"
+e_message "Checking tools"
 # ------------------------------------------------------------------------------
 
 if has_command "brew"; then
@@ -34,17 +34,6 @@ if has_command "brew"; then
 fi
 
 if has_command "brew"; then
-  if ! has_command "git-flow"; then
-    get_consent "Install git-flow"
-    if has_consent; then
-      e_pending "Installing git-flow"
-      brew install git-flow
-      test_command "git-flow"
-    fi
-  fi
-fi
-
-if has_command "brew"; then
   if ! has_command "zsh"; then
     get_consent "Install zsh"
     if has_consent; then
@@ -60,7 +49,7 @@ if has_command "zsh"; then
     get_consent "Install oh-my-zsh"
     if has_consent; then
       e_pending "Installing oh-my-zsh"
-      sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
       test_path ".oh-my-zsh"
     fi
   fi
@@ -71,11 +60,11 @@ if has_command "brew" && has_command "zsh"; then
     get_consent "Install powerlevel10k (CLI theming)"
     if has_consent; then
       e_pending "Installing powerlevel10k"
-      brew install romkatv/powerlevel10k/powerlevel10k
-      echo '# Theme configuration: PowerLevel10K' >>! ~/.zshrc
-      echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
-      echo '# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.' >>! ~/.zshrc
-      echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >>! ~/.zshrc
+      brew install powerlevel10k
+      echo '# Theme configuration: PowerLevel10K' >> ~/.zshrc
+      echo 'source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+      echo '# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.' >> ~/.zshrc
+      echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc
       test_brew "powerlevel10k"
       p10k configure
     fi
@@ -89,7 +78,7 @@ if has_command "brew" && has_command "zsh"; then
       e_pending "Installing zsh-autosuggestions"
       brew install zsh-autosuggestions
       echo "# Fish shell-like fast/unobtrusive autosuggestions for Zsh." >> ~/.zshrc
-      echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+      echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
       test_brew "zsh-autosuggestions"
     fi
   fi
@@ -103,7 +92,7 @@ if has_command "brew" && has_command "zsh"; then
       brew install zsh-syntax-highlighting
       echo "# Fish shell-like syntax highlighting for Zsh." >> ~/.zshrc
       echo "# Warning: Must be last sourced!" >> ~/.zshrc
-      echo "source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+      echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
       test_brew "zsh-syntax-highlighting"
     fi
   fi
@@ -136,7 +125,7 @@ if has_command "brew"; then
     get_consent "Install nvm (Node via nvm)"
     if has_consent; then
       e_pending "Installing nvm"
-      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
       test_command "nvm"
     fi
   fi
@@ -153,11 +142,22 @@ if has_command "brew"; then
   fi
 fi
 
+if has_command "brew"; then
+  if ! has_command "pnpm"; then
+    get_consent "Install pnpm"
+    if has_consent; then
+      e_pending "Installing pnpm"
+      brew install pnpm
+      test_command "pnpm"
+    fi
+  fi
+fi
+
 if has_command 'npm'; then
   get_consent "Upgrade npm"
   if has_consent; then
     e_pending "Upgrading npm"
-    npm i -g npm@latest
+    npm install -g npm@latest
     test_command "npm"
   fi
 fi
@@ -166,7 +166,11 @@ if has_command "npm"; then
   get_consent "Install/Upgrade serve (globally via npm)"
   if has_consent; then
     e_pending "Installing/Upgrading serve"
-    npm i -g serve@latest
+    npm install -g serve@latest
     test_command "serve"
   fi
 fi
+
+# ------------------------------------------------------------------------------
+e_message "Tools complete"
+# ------------------------------------------------------------------------------

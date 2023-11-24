@@ -8,8 +8,8 @@ For a guided setup, open up **Terminal.app** and run the following command:
 
 1. Save repo to `~/Downloads` folder:
    ```sh
-   git clone https://github.com/michaelschwobe/mac-dev-setup.git ~/Downloads/mac-dev-setup && \
-   cd ~/Downloads/mac-dev-setup/scripts
+   git clone https://github.com/djenders/mac-mktg-setup.git ~/Downloads/mac-mktg-setup && \
+   cd ~/Downloads/mac-mktg-setup/scripts
    ```
 2. Run the installer script (rerun as many times as needed).
    ```sh

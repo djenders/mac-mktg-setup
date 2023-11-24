@@ -4,25 +4,27 @@ color_reset=$(tput sgr0)
 color_red=$(tput setaf 1)
 color_green=$(tput setaf 2)
 color_yellow=$(tput setaf 3)
+color_blue=$(tput setaf 4)
 
-e_pending() {
-  printf "${color_yellow}⚡️ %s...${color_reset}" "$@"
+e_failure() {
+  printf "${color_red}🔴  %s${color_reset}" "$@"
   printf "\n"
 }
 
-e_failure() {
-  printf "${color_red}✕  %s${color_reset}" "$@"
+e_pending() {
+  printf "${color_yellow}⏳  %s...${color_reset}" "$@"
   printf "\n"
 }
 
 e_success() {
-  printf "${color_green}✔  %s${color_reset}" "$@"
+  printf "${color_green}🟢  %s${color_reset}" "$@"
   printf "\n"
 }
 
-e_settled() {
-  printf "${color_yellow}✨ %s!${color_reset}" "$@"
+e_message() {
   printf "\n"
+  printf "${color_blue}✨  %s${color_reset}" "$@"
+  printf "\n\n"
 }
 
 has_command() {
@@ -74,6 +76,21 @@ test_path() {
   fi
 }
 
+has_cask() {
+  if $(brew ls --cask $1 &> /dev/null); then
+    return 0
+  fi
+  return 1
+}
+
+test_cask() {
+  if has_cask $1; then
+    e_success "$1"
+  else
+    e_failure "$1"
+  fi
+}
+
 has_app() {
   local name="$@"
   if [ -e "/Applications/$name.app" ]; then
@@ -90,6 +107,13 @@ test_app() {
   fi
 }
 
+has_arm() {
+  if [[ $(uname -p) == 'arm' ]]; then
+    return 0
+  fi
+  return 1
+}
+
 has_consent() {
   if [[ "$REPLY" =~ ^[Yy]$ ]]; then
     return 0
@@ -98,7 +122,7 @@ has_consent() {
 }
 
 get_consent() {
-  printf "❔ %s [y/n]:" "$@"
+  printf "❔  %s? [y/n]:" "$@"
   read -p " " -n 1
   printf "\n"
 }
@@ -107,6 +131,3 @@ if ! [[ "${OSTYPE}" == "darwin"* ]]; then
   e_failure "Unsupported operating system (macOS only)"
   exit 1
 fi
-
-# This will clear the prompt before each sourced file.
-clear

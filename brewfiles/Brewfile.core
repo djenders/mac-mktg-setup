@@ -3,6 +3,9 @@
 
 # --- formulae ---------------------------------------------------------------
 brew "git"
+brew "gh"                   # GitHub CLI — also installs git's credential
+                            # helper via `gh auth login`. Without this, a
+                            # fresh machine cannot push over HTTPS.
 brew "mas"                  # Mac App Store CLI — required for the mas lines below
 brew "pipx"
 brew "node"                 # ONE node. See notes at the bottom of this file.

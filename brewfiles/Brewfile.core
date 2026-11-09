@@ -25,7 +25,8 @@ cask "one-switch"
 cask "hiddenbar"
 cask "appcleaner"
 cask "the-unarchiver"
-cask "rar"
+# cask "rar"                # Homebrew disabled it 2026-09-01 (fails Gatekeeper).
+                            # The Unarchiver above handles .rar. Not replacing it.
 cask "stillcolor"
 cask "geekbench"
 cask "openlogi"             # replaces logi-options+ — config is one TOML file

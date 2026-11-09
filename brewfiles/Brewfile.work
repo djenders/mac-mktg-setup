@@ -8,7 +8,8 @@
 cask "microsoft-office"     # Word, Excel, PowerPoint, Outlook, OneNote (pkg)
 cask "microsoft-teams"      # (pkg)
 cask "microsoft-auto-update"
-cask "onedrive"
+# cask "onedrive"           # REDUNDANT: microsoft-office installs the Microsoft
+                            # 365 suite, which already bundles a newer OneDrive.
 cask "webex"
 cask "zoom"
 

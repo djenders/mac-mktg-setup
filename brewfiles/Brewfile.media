@@ -8,7 +8,8 @@ cask "tidal"
 cask "spotify"
 cask "sonos"
 cask "yacreader"            # YACReaderLibrary ships inside this
-cask "comictagger"
+# cask "comictagger"        # Homebrew disabled it 2026-09-01 (fails Gatekeeper).
+                            # Dropped. Tagging belongs on Mnemosyne with Mylar3.
 cask "steam"
 
 # --- manual: no cask --------------------------------------------------------

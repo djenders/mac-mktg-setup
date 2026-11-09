@@ -1,0 +1,61 @@
+# Apps in /Applications that Homebrew does not manage — 2026-08-17
+#
+# Each needs one of: a cask in a Brewfile, a mas entry, a line in
+# docs/MANUAL.md, or an honest admission you don't use it.
+# Apple built-ins (Mail, Safari, Photos, Chess…) are expected here.
+
+Adobe Acrobat DC
+Adobe Bridge 2026
+Adobe Creative Cloud
+Adobe Illustrator 2026
+Adobe InDesign 2026
+Adobe Lightroom Classic
+Adobe Photoshop 2026
+ColorSlurp
+Comet
+Comfy Desktop
+ComicTagger
+Dia
+Discovery
+FileZilla
+Framer
+FreeFileSync
+GatherOS
+Google Chrome
+HP
+iMazing
+logioptionsplus
+Microsoft Defender Shim
+Microsoft Excel
+Microsoft OneNote
+Microsoft Outlook
+Microsoft PowerPoint
+Microsoft Teams
+Microsoft Word
+oMLX
+OneDrive
+OpenMTP
+OrpheusDL GUI
+Perplexity
+Private Internet Access
+RealTimeSync
+Retrom
+Roon
+Safari
+SamsungMagician
+Session
+Sleeve
+Stability Matrix
+Steam
+Telegram
+TIDAL
+TurboTax 2025
+Unsplash Wallpapers
+Utilities
+VidBee
+Webex
+WiFiman Desktop
+Wire
+YACReader
+YACReaderLibrary
+zoom.us

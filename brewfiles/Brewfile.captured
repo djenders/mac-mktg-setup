@@ -1,0 +1,100 @@
+# Secure runtime for JavaScript and TypeScript
+brew "deno"
+# Validate EPUB files, version 2.0 and later
+brew "epubcheck"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Distributed revision control system
+brew "git"
+# Mac App Store command-line interface
+brew "mas"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node@20"
+# Manage multiple Node.js versions
+brew "nvm"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# User interface to the TELNET protocol
+brew "telnet"
+# Watch files and take action when they change
+brew "watchman"
+# YouTube video and MP3 downloader
+cask "airy"
+# Utility to add Dynamic Island like features to notch area
+cask "alcove"
+# Application uninstaller
+cask "appcleaner"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
+# Anthropic's official Claude AI desktop app
+cask "claude"
+# Server and cloud storage browser
+cask "cyberduck"
+# Voice and text chat software
+cask "discord"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+# Client for the Dropbox cloud storage service
+cask "dropbox"
+# App for note taking, organising, task lists, and archiving
+cask "evernote"
+cask "font-jetbrains-mono-nerd-font"
+# Tool to measure the computer system's performance
+cask "geekbench"
+# Desktop client for GitHub repositories
+cask "github"
+# Grammarly for desktop
+cask "grammarly-desktop"
+# Utility to hide menu bar items
+cask "hiddenbar"
+# Wallet desktop application to maintain multiple cryptocurrencies
+cask "ledger-wallet"
+# Discover, download, and run local LLMs
+cask "lm-studio"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Office suite
+cask "microsoft-office"
+# Meet, chat, call, and collaborate in just one place
+cask "microsoft-teams"
+# Handy utility to manage and customize the notch area
+cask "notchnook"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# All system and utility switches in one place
+cask "one-switch"
+# Archive manager for data compression and backups
+cask "rar"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Move and resize windows using keyboard shortcuts or snap areas
+cask "rectangle"
+# Workstation to streamline your accounts, apps, and workflows
+cask "shift"
+# Control your Sonos system
+cask "sonos"
+# Music streaming service
+cask "spotify"
+# Tool to disable temporal dithering on Apple Silicon Macs
+cask "stillcolor"
+# SSH client
+cask "termius"
+# Unpacks archive files
+cask "the-unarchiver"
+# Open-source code editor
+cask "visual-studio-code"
+# Rust-based terminal
+cask "warp"
+mas "ColorSlurp", id: 1287239339
+mas "Discovery", id: 1381004916
+mas "HP", id: 1474276998
+mas "Unsplash Wallpapers", id: 1284863847
+mas "Wire", id: 931134707
+vscode "ms-vscode-remote.remote-ssh"
+vscode "ms-vscode-remote.remote-ssh-edit"
+vscode "ms-vscode.remote-explorer"
+npm "corepack"

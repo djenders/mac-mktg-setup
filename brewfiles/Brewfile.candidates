@@ -1,0 +1,50 @@
+# Candidates resolved by tools/find-casks.sh on 2026-08-17
+# Every line below is a cask that exists. Sort them into the tiered
+# Brewfiles by hand — existing is not the same as wanted.
+
+cask "adobe-creative-cloud" # Adobe Creative Cloud
+cask "comet" # Comet
+cask "comfy" # Comfy Desktop
+cask "comictagger" # ComicTagger
+cask "framer" # Framer
+cask "freefilesync" # FreeFileSync
+cask "google-chrome" # Google Chrome
+cask "imazing" # iMazing
+cask "onedrive" # OneDrive
+cask "openmtp" # OpenMTP
+cask "perplexity" # Perplexity
+cask "private-internet-access" # Private Internet Access
+cask "roon" # Roon
+cask "session" # Session
+cask "stability-matrix" # Stability Matrix
+cask "steam" # Steam
+cask "telegram" # Telegram
+cask "tidal" # TIDAL
+cask "webex" # Webex
+cask "wifiman" # WiFiman Desktop
+cask "yacreader" # YACReader
+
+# --- needs a human decision ---
+# Dia                        candidates: airmedia,dda,diagnostics,dialpad
+# FileZilla                  candidates: filefillet
+# GatherOS                   candidates: gather
+# logioptionsplus            candidates: logi-options+
+# Retrom                     candidates: retcon
+# SamsungMagician            candidates: samsung-magician
+# TurboTax 2025              candidates: turbotax-2024
+# VidBee                     candidates: viber
+# YACReaderLibrary           candidates: yacreader
+# zoom.us                    candidates: gzdoom,photozoom-pro,zoom,zoom-for-it-admins
+
+# --- already from the App Store: keep the mas lines instead ---
+# ColorSlurp
+# Discovery
+# HP
+# Unsplash Wallpapers
+# Wire
+
+# --- no cask: mas entry, manual download, or drop ---
+# oMLX
+# OrpheusDL GUI
+# RealTimeSync
+# Sleeve

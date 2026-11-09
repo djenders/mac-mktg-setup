@@ -1,0 +1,12 @@
+deno
+epubcheck
+ffmpeg
+git
+mas
+node
+node@20
+nvm
+pipx
+python@3.9
+telnet
+watchman

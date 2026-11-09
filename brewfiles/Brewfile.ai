@@ -1,7 +1,9 @@
 # Brewfile.ai — local models and the container runtime.
 #   brew bundle install --file=brewfiles/Brewfile.ai
 
-cask "docker-desktop"
+# cask "docker-desktop"    # removed 2026-11-09. Container workloads run on
+                          # Mnemosyne, not locally. If local containers are
+                          # ever needed, orbstack is far lighter.
 cask "lm-studio"
 cask "stability-matrix"
 # cask "comfy"              # SEE BELOW before enabling

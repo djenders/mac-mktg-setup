@@ -181,16 +181,44 @@ Get this right now and every future machine costs nothing. You also have a
 
 **Decide: Stability Matrix or Comfy Desktop, not both.** See `Brewfile.ai`.
 
-### 6. Keys — generate, don't copy
+### 6. Git identity — the dotfiles can't carry it
+
+`config/shell/` is deliberately out of this public repo, so a fresh machine
+invents an identity from your hostname (`djenders@MacBook-Pro.localdomain`).
+Commits made that way don't link to your GitHub account. Set it before the
+first commit:
 
 ```bash
-ssh-keygen -t ed25519 -C "dennis@jenders.com"
+git config --global user.name "Dennis Jenders"
+git config --global user.email "djenders@users.noreply.github.com"
+```
+
+The noreply address keeps a real mailbox out of public commit metadata.
+
+`gh` is in `Brewfile.core`, and `gh auth login` installs git's credential
+helper. Without it, pushing over HTTPS fails with a password prompt that can
+never succeed — GitHub dropped password auth in 2021.
+
+**Once a commit is pushed, never `--amend` it.** Add a new commit instead. An
+amended commit gets a new SHA, diverges from the remote, and the only ways out
+are a force-push or this:
+
+```bash
+git fetch origin && git reset --soft origin/master
+git commit -m "<what the change actually was>"
+git push
+```
+
+### 7. Keys — generate, don't copy
+
+```bash
+ssh-keygen -t ed25519 -C "djenders@users.noreply.github.com"
 ```
 
 Add the new public key to GitHub, Mnemosyne, and anywhere else. A new machine
 is free key rotation. Your old private keys never touch a backup.
 
-### 7. Re-pair
+### 8. Re-pair
 
 Tailscale · UniFi · Sonos · Roon remote (Core stays on Mnemosyne) · printer ·
 Samsung Magician · Logitech

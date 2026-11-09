@@ -1,0 +1,20 @@
+# Brewfile.work — GMR / Omnicom stack.
+#   brew bundle install --file=brewfiles/Brewfile.work
+#
+# ⚠ CHECK FIRST: if these are pushed by GMR's MDM, do NOT install them here.
+# MDM will reinstall and reconfigure them, and your Brewfile will fight it.
+# Run `profiles list` or check System Settings → Device Management.
+
+cask "microsoft-office"     # Word, Excel, PowerPoint, Outlook, OneNote (pkg)
+cask "microsoft-teams"      # (pkg)
+cask "microsoft-auto-update"
+cask "onedrive"
+cask "webex"
+cask "zoom"
+
+# --- known false positives in orphan-apps.txt -------------------------------
+# The Office and Teams casks install via pkg, not app artifacts, so every
+# Microsoft app shows as "unmanaged" in the orphan report. It's a detection
+# limitation, not a gap. Ignore them there.
+#
+# Microsoft Defender Shim is almost certainly MDM. Leave it alone.

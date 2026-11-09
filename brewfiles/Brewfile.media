@@ -1,0 +1,19 @@
+# Brewfile.media — music, comics, games.
+#   brew bundle install --file=brewfiles/Brewfile.media
+
+brew "epubcheck"            # dependency of the EPUB cleaning toolkit — do not prune
+
+cask "roon"                 # remote only; Core runs on Mnemosyne
+cask "tidal"
+cask "spotify"
+cask "sonos"
+cask "yacreader"            # YACReaderLibrary ships inside this
+cask "comictagger"
+cask "steam"
+
+# --- manual: no cask --------------------------------------------------------
+# Sleeve       — replay.software, direct download
+# Retrom       — GitHub releases
+# VidBee       — direct download
+# OrpheusDL GUI— Python tool, not a cask
+mas "Discovery", id: 1381004916

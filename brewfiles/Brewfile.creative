@@ -1,0 +1,21 @@
+# Brewfile.creative — Adobe, design, type.
+#   brew bundle install --file=brewfiles/Brewfile.creative
+
+cask "adobe-creative-cloud"  # installs the CC desktop app only
+cask "framer"
+
+# --- expected orphans -------------------------------------------------------
+# Creative Cloud installs Photoshop, Lightroom Classic, Illustrator, InDesign,
+# Bridge and Acrobat itself. They will ALWAYS appear in orphan-apps.txt and that
+# is correct — do not go looking for casks for them.
+#
+# --- restore order matters --------------------------------------------------
+# 1. install this Brewfile
+# 2. sign into Creative Cloud, let Adobe Fonts sync
+# 3. ONLY THEN untar fonts-user.tar.gz
+# Reversing 2 and 3 fills Font Book with duplicates.
+#
+# --- also restore from archive ----------------------------------------------
+# creative/lightroom-settings.tar.gz   develop presets, profiles, export presets
+# creative/camera-raw.tar.gz
+# .lrcat catalogs — copied separately, see docs/MANUAL.md

@@ -1,0 +1,10 @@
+# Brewfile.finance — wallets and tax.
+#   brew bundle install --file=brewfiles/Brewfile.finance
+
+cask "ledger-wallet"
+# cask "ledger-live"        # you have BOTH installed; only Ledger Wallet is in
+#                           /Applications. Reconcile: brew uninstall --cask ledger-live
+
+# --- manual -----------------------------------------------------------------
+# TurboTax 2025 — homebrew-cask only carries turbotax-2024; the cask lags a year.
+#                 Download direct from Intuit each season.

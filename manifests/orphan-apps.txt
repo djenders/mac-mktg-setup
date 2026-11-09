@@ -1,4 +1,4 @@
-# Apps in /Applications that Homebrew does not manage — 2026-08-17
+# Apps in /Applications that Homebrew does not manage — 2026-11-08
 #
 # Each needs one of: a cask in a Brewfile, a mas entry, a line in
 # docs/MANUAL.md, or an honest admission you don't use it.
@@ -17,10 +17,12 @@ Comfy Desktop
 ComicTagger
 Dia
 Discovery
+Draw Things
 FileZilla
 Framer
 FreeFileSync
 GatherOS
+Geekbench 6
 Google Chrome
 HP
 iMazing

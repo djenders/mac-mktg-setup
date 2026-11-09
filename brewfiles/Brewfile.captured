@@ -1,5 +1,8 @@
+tap "drawthingsai/draw-things", trusted: { formulae: ["draw-things-cli"] }
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
+# Local inference and LoRA training CLI for Draw Things
+brew "draw-things-cli"
 # Validate EPUB files, version 2.0 and later
 brew "epubcheck"
 # Play, record, convert, and stream select audio and video codecs
@@ -61,7 +64,6 @@ cask "microsoft-auto-update"
 cask "microsoft-office"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
-# Handy utility to manage and customize the notch area
 cask "notchnook"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
@@ -91,6 +93,7 @@ cask "visual-studio-code"
 cask "warp"
 mas "ColorSlurp", id: 1287239339
 mas "Discovery", id: 1381004916
+mas "Draw Things", id: 6444050820
 mas "HP", id: 1474276998
 mas "Unsplash Wallpapers", id: 1284863847
 mas "Wire", id: 931134707

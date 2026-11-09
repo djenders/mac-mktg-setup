@@ -1,0 +1,73 @@
+# Brewfile.core — always. Shell, terminal, browsers, files, comms, utilities.
+#   brew bundle install --file=brewfiles/Brewfile.core
+
+# --- formulae ---------------------------------------------------------------
+brew "git"
+brew "mas"                  # Mac App Store CLI — required for the mas lines below
+brew "pipx"
+brew "node"                 # ONE node. See notes at the bottom of this file.
+brew "deno"
+brew "ffmpeg"
+
+# --- terminal & editor ------------------------------------------------------
+cask "warp"
+cask "termius"
+cask "visual-studio-code"
+cask "github"
+cask "font-jetbrains-mono-nerd-font"
+
+# --- window & system utilities ----------------------------------------------
+cask "raycast"
+cask "rectangle"
+cask "alcove"
+cask "notchnook"
+cask "one-switch"
+cask "hiddenbar"
+cask "appcleaner"
+cask "the-unarchiver"
+cask "rar"
+cask "stillcolor"
+cask "geekbench"
+cask "openlogi"             # replaces logi-options+ — config is one TOML file
+# cask "logi-options+"      # fallback if OpenLogi doesn't support the mouse
+
+# --- browsers & assistants --------------------------------------------------
+cask "google-chrome"
+cask "comet"
+cask "perplexity"
+cask "claude"
+cask "grammarly-desktop"
+
+# --- files, sync, transfer --------------------------------------------------
+cask "dropbox"
+cask "cyberduck"
+cask "freefilesync"         # RealTimeSync ships inside this — not a separate cask
+cask "openmtp"
+cask "imazing"
+
+# --- comms ------------------------------------------------------------------
+cask "discord"
+cask "telegram"
+cask "session"
+
+# --- network ----------------------------------------------------------------
+cask "private-internet-access"
+cask "wifiman"
+
+# --- Mac App Store ----------------------------------------------------------
+mas "ColorSlurp", id: 1287239339
+mas "Wire", id: 931134707
+mas "Unsplash Wallpapers", id: 1284863847
+
+# --- manual: no cask exists -------------------------------------------------
+# FileZilla        — dropped from homebrew-cask; download from filezilla-project.org
+#                    (and decline the bundled offers in the installer)
+# Dia              — Browser Company; direct download only
+# SamsungMagician  — cask "samsung-magician" exists but verify it matches your SSD
+# HP               — printer software, App Store (id 1474276998) or hp.com
+#
+# --- node: pick one ---------------------------------------------------------
+# You currently have node, node@20 AND nvm installed, fighting over PATH.
+# node@20 went EOL in April 2026. nvm-via-Homebrew is unsupported upstream.
+#   brew uninstall node@20 nvm
+# If you later need version switching, install nvm via its own installer, not brew.

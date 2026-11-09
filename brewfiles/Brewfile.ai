@@ -1,0 +1,23 @@
+# Brewfile.ai — local models and the container runtime.
+#   brew bundle install --file=brewfiles/Brewfile.ai
+
+cask "docker-desktop"
+cask "lm-studio"
+cask "stability-matrix"
+# cask "comfy"              # SEE BELOW before enabling
+
+# --- decide before installing both ------------------------------------------
+# Stability Matrix exists to install and manage ComfyUI. Running Comfy Desktop
+# alongside it gives you two ComfyUI installs and two model directories.
+# Pick one. This gets much more expensive to unpick after you relocate models.
+#
+# --- models are NOT restored by brew ----------------------------------------
+# Move the model directories to Mnemosyne or an external SSD and repoint:
+#   LM Studio        Settings → Models directory
+#   Stability Matrix portable — move the data folder, point the launcher at it
+#   ComfyUI          extra_model_paths.yaml
+# Do this once and the next three wipes cost nothing.
+# Inventory lives in manifests/models.md
+#
+# --- manual -----------------------------------------------------------------
+# oMLX  — no cask; direct download

@@ -38,6 +38,7 @@ cask "openlogi"             # replaces logi-options+ — config is one TOML file
 # --- browsers & assistants --------------------------------------------------
 cask "google-chrome"
 cask "comet"
+cask "chatgpt"
 cask "perplexity"
 cask "claude"
 cask "grammarly-desktop"
